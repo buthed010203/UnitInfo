@@ -104,8 +104,7 @@ public class OverDrawer {
             });
 
             if(pathLine) spawner.getSpawns().each(t -> {
-                if(paths[0] > settings.getInt("pathlinelimit")) return;
-                paths[0]++;
+                if(paths[0]++ > settings.getInt("pathlinelimit")) return;
                 Team enemyTeam = state.rules.waveTeam;
                 for(int p = 0; p < 3; p++) {
                     otherCores = Groups.build.count(b -> b instanceof CoreBlock.CoreBuild && b.team != enemyTeam);
